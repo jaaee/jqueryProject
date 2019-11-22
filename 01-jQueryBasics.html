@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>First jQuery</title>
+        <script type="text/javascript"
+			  src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    </head>
+<body>
+    <a id="myLink" href="#">Click Me</a>
+    <div id="myContent">
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+        sdfaasdfasdfasdffffffffffffffffffffffffffffffffffffffffff
+        <br/>
+    </div>
+    <style>
+        .myStyle{
+            background-color: brown;
+            color:yellow;
+            height: 200px;
+            width:500px;
+        }
+    </style>
+<script type="text/javascript">
+    //trap the event when the document is loaded
+    $(document).ready(function() {
+        console.log("Document is Ready")
+        //hide the div tag
+        $("#myContent").hide();
+        //handle the click event of myLink and display the content
+
+        $("#myLink").click(function() {
+                $("#myContent").show(5000).addClass("myStyle");
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

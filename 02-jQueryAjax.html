@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>||jQuery with Ajax||</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <button id="btnLoadData">Load Data from API</button>
+    <table border="1" id="tblToDos">
+        <tr>
+            <th>User Id</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Completed</th>
+        </tr>
+    </table>
+<script type="text/javascript">
+    var apiUrl = "https://jsonplaceholder.typicode.com/todos";
+
+    $(document).ready(function() {
+        //register the event for button click
+        //pull the data 
+        //add rows and append to table
+        $("#btnLoadData").click(function(){
+            var strContent = "";
+            $.get(apiUrl)
+            .done(function(response){
+                console.log(response);
+                $.each(response,function(key,item){
+                    var strRowContent = "<tr>" +
+                        "<td>" + item["userId"] + "</td>" +
+                        "<td>" + item["id"] + "</td>" +
+                        "<td>" + item["title"] + "</td>" +
+                        "<td>" + item["completed"] + "</td>" +
+                        "</tr>";
+                    strContent += strRowContent;
+                });
+                $("#tblToDos").append(strContent);
+                $("#tblToDos tr th:last-child").hide();
+                $("#tblToDos tr td:last-child").hide();
+            });
+
+        })
+
+
+    })
+
+</script>
+</body>
+
+</html>
